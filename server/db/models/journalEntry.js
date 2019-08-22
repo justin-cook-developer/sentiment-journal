@@ -5,6 +5,8 @@ CREATE TABLE journal_entries(
     title VARCHAR(100) NOT NULL,
     body TEXT NOT NULL,
     sentiment NUMERIC(16, 15) NOT NULL CHECK (sentiment >= 0 AND sentiment <= 1),
+    created_at DATE NOT NULL,
+    updated_at DATE NOT NULL,
     user_id UUID REFERENCES users(id)
 );`;
 

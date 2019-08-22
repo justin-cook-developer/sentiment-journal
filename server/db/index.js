@@ -12,6 +12,10 @@ async function createTables() {
   }
 }
 
+if (process.env.FORCE) {
+  createTables();
+}
+
 module.exports = {
   query,
   createTables,

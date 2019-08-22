@@ -10,6 +10,4 @@ CREATE TABLE users(
   updated_at DATE NOT NULL
 );`;
 
-module.exports = {
-  createUserTable,
-};
+module.exports = createUserTable;

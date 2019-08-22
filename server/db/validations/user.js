@@ -7,15 +7,15 @@ const userSchema = Joi.object().keys({
   first_name: Joi.string()
     .alphanum()
     .min(1)
-    .max(49),
+    .max(50),
   last_name: Joi.string()
     .alphanum()
     .min(1)
-    .max(49),
+    .max(50),
   email: Joi.string().email(),
   password: Joi.string()
-    .min(8)
-    .max(49),
+    .min(1)
+    .max(50),
   created_at: Joi.string().isoDate(),
   updated_at: Joi.string().isoDate(),
 });

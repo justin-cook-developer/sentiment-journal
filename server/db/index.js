@@ -1,9 +1,18 @@
-const dotenv = require('dotenv');
 const { query } = require('./connection');
-const { createUserTable } = require('./models/user');
+const createUserTable = require('./models/user');
+const createJournalEntriesTable = require('./models/journalEntry');
 
-dotenv.config()
+async function createTables() {
+  try {
+    await query(createUserTable);
+    await query(createJournalEntriesTable);
+    console.log('CREATED TABLES');
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-query(createUserTable)
-  .then(() => console.log('created table'))
-  .catch(console.error);
+module.exports = {
+  query,
+  createTables,
+};
